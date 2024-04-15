@@ -2,10 +2,25 @@
 
 # LinkedList class | Will represent the full list
 class LinkedList
+  attr_accessor :head
+
+  def initialize(value)
+    @head = Node.new(value)
+  end
 
   # Adds a new node containing value to the end of the list
   def append(value)
+    current_node = @head
+    current_node = current_node.next_node until current_node.next_node.nil?
 
+    current_node.next_node = Node.new(value)
+  end
+
+  def display
+    current_node = @head
+    print "#{current_node.value} -> " until current_node.nil?
+
+    puts 'nil'
   end
 
   # Adds a new node containing value to the start of the list
@@ -57,7 +72,14 @@ end
 
 # Node class | Contains value method and a link to the next node
 class Node
-  def value
-    # Value method logic
+  attr_accessor :value, :next_node
+
+  def initialize(value, next_node = nil)
+    @value = value
+    @next_node = next_node
   end
 end
+
+list = LinkedList.new(10)
+
+list.display
