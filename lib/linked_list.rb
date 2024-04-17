@@ -25,7 +25,6 @@ class LinkedList
 
   # Adds a new node containing value to the start of the list
   def prepend(value)
-
   end
 
   # Returns the total number of nodes in the list
@@ -35,7 +34,7 @@ class LinkedList
 
   # Returns the first node in the list
   def head
-
+    @head
   end
 
   # Returns the last node in the list
